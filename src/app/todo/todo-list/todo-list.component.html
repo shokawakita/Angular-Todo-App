@@ -1,0 +1,16 @@
+<ul *ngFor="let todo of todos">
+  <li [class.check]="todo.isChecked">
+    <input type="checkbox" (click)="toggleCheckTodo(todo)" [checked]="todo.isChecked">
+    {{todo.title}}
+    <button type="button" (click)="deleteTodo(todo)">delete</button>
+    <button type="button" (click)="toggleUpdate(todo)">updateEditerOpen</button>
+    <div class="editForm" [class.appear]="todo.edit">
+      <input type="text" name="name" #title>
+      <button type="button" (click)="checkValidation(title.value, todo)">update</button>
+    </div>
+  </li>
+</ul>
+<input type="text" #target>
+<button type="button" (click)="checkValidation(target.value)">Add!</button>
+<br>
+<button type="button" (click)="pergeTodo()">Perge</button>

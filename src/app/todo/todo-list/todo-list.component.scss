@@ -1,0 +1,11 @@
+.check {
+  text-decoration: line-through;
+}
+
+.editForm {
+  display: none;
+
+  &.appear {
+    display: block;
+  }
+}
